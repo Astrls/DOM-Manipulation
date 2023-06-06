@@ -36,3 +36,15 @@ pGraph.forEach((pGraph) => {
     console.log(pGraph.textContent);
   }
 });
+
+
+const getRandomColor = () => ('#' + parseInt(Math.random() * 0xffffff).toString(16));
+
+pGraph.forEach((pGraph) => {
+    if (!pGraph.className) {
+      pGraph.style.color = getRandomColor();
+    }
+  });
+
+
+
