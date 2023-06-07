@@ -9,17 +9,31 @@ const LEARNERS = [
   "Oana",
   "Louis",
   "Glaucielle",
+  "Zuzana",
+  "Adam",
+  "Ignace",
+  "Camila",
+  "Safa",
+  "Raad",
+  "Aziza",
+  "Florentina",
+  "Lucie",
+  "Francesca",
+  "Leila",
+  "Noah",
+  "Athi",
+  "William",
+  "Antoine",
+  "Antoine"
 ];
 
 // Randomizing the list
-const RANDOMLEARNERS = [
-
-]
+const RANDOMLEARNERS = LEARNERS.sort((a, b) => 0.5 - Math.random());
 
 // Loop to create a new section for each learner, with a paragraph nested inside with the name of the learner
-for (i = 0; i < LEARNERS.length; i++) {
+for (i = 0; i < RANDOMLEARNERS.length; i++) {
   const newP = document.createElement("p");
-  const newText = document.createTextNode(String(LEARNERS[i]));
+  const newText = document.createTextNode(String(RANDOMLEARNERS[i]));
   document
     .querySelector("article")
     .appendChild(document.createElement("section"))
