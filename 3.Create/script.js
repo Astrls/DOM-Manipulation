@@ -1,34 +1,49 @@
-/*
-*/
+// List of learners in my group
+const LEARNERS = [
+  "Prince",
+  "Alizee",
+  "John",
+  "Jean-louis",
+  "Georgi",
+  "Walid",
+  "Oana",
+  "Louis",
+  "Glaucielle",
+];
 
-const LEARNERS = ['Prince', 'Alizee', 'John', 'Jean-louis', 'Georgi', 'Walid', 'Oana', 'Louis'];
-// addSection = document.createElement('section');
+// Randomizing the list
+const RANDOMLEARNERS = [
 
-// learnerArr.forEach((learnerArr) => {
-//     addSection;
-//     document.createElement('p');
-// });
+]
 
+// Loop to create a new section for each learner, with a paragraph nested inside with the name of the learner
+for (i = 0; i < LEARNERS.length; i++) {
+  const newP = document.createElement("p");
+  const newText = document.createTextNode(String(LEARNERS[i]));
+  document
+    .querySelector("article")
+    .appendChild(document.createElement("section"))
+    .setAttribute("id", `${i}`);
+  document.getElementById(`${i}`).appendChild(newP);
+  newP.appendChild(newText);
+}
 
+// Selecting all the paragraphs 
+let para = document.querySelectorAll("p");
 
-  
-// for (i = 0; i < LEARNERS.length; i++) {
-//     let addElement = document.createElement("section")
-//     let addContent = document.createTextNode(String(LEARNERS[i]));
-//     addElement.appendChild(addContent);
-//     let CURRENT_DIV = document.querySelector("article");
-//     document.body.insertBefore(addElement,CURRENT_DIV);
-// };
+// Creating a random HSL value and applying it to the background color for each learner
+para.forEach((para) => {
+  const H = Math.floor(Math.random() * 360);
+  const S = Math.floor(Math.random() * 100);
+  const L = Math.floor(Math.random() * 100);
 
-// let addElement = document.createElement("section")
-// let addContent = document.createTextNode(String(LEARNERS[0]));
-// addElement.appendChild(addContent);
-// let CURRENT_DIV = document.querySelector("article");
-// document.body.insertBefore(addElement,CURRENT_DIV);
+  colorBg = `HSL(${H},${S}%,${L}%)`;
+  para.style.backgroundColor = colorBg;
+  para.setAttribute("id", `${colorBg}`);
 
-// document.createElement("section").appendChild("test");
-// document.insertBefore('section', document.querySelector("article"))
-
-
-const section = document.querySelector("article").appendChild(document.createElement("section"));
-
+  if (L < 50) { // Condition to apply black or white text to the paragraph depending on the lightness of the HSL value
+    para.style.color = "white";
+  } else {
+    para.style.color = "black";
+  }
+});
