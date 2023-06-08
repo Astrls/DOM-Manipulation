@@ -89,3 +89,12 @@ const deleteSquares = document.addEventListener("keypress", (event) => {
     }
   }
 })
+
+
+const sendAlert = document.addEventListener("click", (event) =>{
+  if(event.target.classList.contains("displayedsquare")){
+    let color = event.target.className.split(" ")[0]
+    alert(color);
+  }
+
+} )
