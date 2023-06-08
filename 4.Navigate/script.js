@@ -2,9 +2,9 @@
 
 const ol = document.querySelector("ol");
 const li5 = ol.children[4];
-const li1 = ol.children[0]
+const li1 = ol.children[0];
 
-ol.insertBefore(li5,li1)
+ol.insertBefore(li5,li1);
 
 //EX 2
 
@@ -26,5 +26,5 @@ sections[1].insertBefore(second, pGraphs[3]);
 
 //EX 3
 
-bye = document.querySelector("footer")
+let bye = document.querySelector("footer");
 bye.remove();
