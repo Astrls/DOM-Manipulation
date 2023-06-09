@@ -73,7 +73,7 @@ const changeBg = document.addEventListener("keypress", (event) => {
 
 
 // Event listener function that clears the log when the I key is pressed
-const deleteLog = document.addEventListener("keypress", (event) => {
+document.addEventListener("keydown", (event) => {
   if(event.code == "KeyI"){
     while (document.querySelectorAll("li").length > 0) {
       document.querySelector("li").remove();
