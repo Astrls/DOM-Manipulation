@@ -1,10 +1,5 @@
 const list = document.querySelector("ul");
 let indexNodes = document.querySelector("ul").childNodes;
-// let arrNodes = Array.from(indexNodes);
-// let shuffledNodes = arrNodes.sort((a, b) => 0.5 - Math.random());
-// console.log(document.querySelectorAll("li"));
-
-// console.log(indexNodes);
 
 indexNodes.forEach((child) => {
   if (child.nodeType === 1) {
@@ -47,8 +42,36 @@ document.body.addEventListener("keyup", (e) => {
       });
     }
   } else if (e.code == "KeyD") {
-   let newFf = list.firstChild.cloneNode(true);
+    let newFf = list.firstChild.cloneNode(true);
     list.appendChild(newFf);
   }
 });
 
+let newDiv = document.createElement("div");
+document.body.insertBefore(newDiv, list);
+
+let newSelect = document.createElement("select");
+newDiv.appendChild(newSelect);
+
+newSelect
+  .appendChild(document.createElement("option"))
+  .appendChild(document.createTextNode("normal franchises"));
+newSelect
+  .appendChild(document.createElement("option"))
+  .appendChild(document.createTextNode("important franchises"));
+
+const select = document.querySelector("select");
+
+
+select.addEventListener("change", (e) => {
+  if (e.target.value == "important franchises") {
+    for (i = 0; i < document.querySelectorAll("ul").length; i++) {
+      document.querySelectorAll("ul")[i].style.visibility = "hidden";
+      document.querySelectorAll(".important")[i].style.visibility = "visible";
+    }
+  } else {
+    for (i = 0; i < document.querySelectorAll("ul").length; i++) {
+      document.querySelectorAll("ul")[i].style.visibility = "visible";
+    }
+  }
+});
