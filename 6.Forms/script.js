@@ -1,4 +1,4 @@
-// Declaring variables 
+// Declaring variables
 let nameField = document.getElementById("firstname");
 let ageField = document.getElementById("age");
 let nameSpan = document.getElementById("display-firstname");
@@ -18,8 +18,6 @@ nameField.addEventListener("keyup", (event) => {
   }
 });
 
-
-
 // Verifying age to display a message
 ageField.addEventListener("keyup", (event) => {
   if (parseInt(event.target.value) >= 18) {
@@ -29,26 +27,25 @@ ageField.addEventListener("keyup", (event) => {
   }
 });
 
-
 // Verifying if the password is equal or longer than 6 letters
 pWord.addEventListener("keyup", (event) => {
-    //if no password -> box is white
+  //if no password -> box is white
   if (event.target.value.length == 0) {
     pWord.style.backgroundColor = "white";
     //if shorter than 6 letters -> box is red
   } else if (event.target.value.length < 6) {
     pWord.style.backgroundColor = "red";
-  }//if equal or lonfer than 6 letters -> box is white again
+  } //if equal or longer than 6 letters -> box is white again
   else if (event.target.value.length >= 6) {
     pWord.style.backgroundColor = "white";
-  }//logging the text content to use for check with the verify password box
+  } //logging the text content to use for check with the verify password box
   pWord.textContent = pWord.textContent + event.key;
 });
 
 // Turning verify password box red when the password doesn't match
 pWconfirm.addEventListener("keyup", (event) => {
-    let pwContent = pWord.value; //declaring variable for the content of the first pw box
-    //if not equal to password -> box is red
+  let pwContent = pWord.value; //declaring variable for the content of the first pw box
+  //if not equal to password -> box is red
   if (event.target.value != pwContent) {
     pWconfirm.style.backgroundColor = "red";
     //if equal to password -> box is white
@@ -57,12 +54,13 @@ pWconfirm.addEventListener("keyup", (event) => {
   }
 });
 
+//Check button to toggle dark mode
 darkToggle.addEventListener("change", (event) => {
-    if (event.target.value == "dark") {
-        document.body.style.backgroundColor = "black";
-        document.body.style.color = "white";
-    }else if(event.target.value == "light") {
-        document.body.style.backgroundColor = "white";
-        document.body.style.color = "black";
-    }
-})
+  if (event.target.value == "dark") {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+  } else if (event.target.value == "light") {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+});
