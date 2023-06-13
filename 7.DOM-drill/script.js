@@ -10,6 +10,15 @@ indexNodes.forEach((child) => {
   }
 });
 
+indexNodes.forEach((child) => {
+    if (child.nodeType === 1 && child.textContent) {
+      if (child.textContent == "Fast and Furious") {
+        list.insertBefore(child, list.firstChild);
+        child.classList.add("important");
+      }
+    }
+  });
+
 for (i = 0; i < indexNodes.length; i++) {
   for (j = 0; j < indexNodes.length; j++)
     if (indexNodes[i].nodeType === 1 && i !== j) {
